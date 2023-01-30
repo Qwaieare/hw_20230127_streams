@@ -23,6 +23,13 @@ public class Main {
                 .limit(20)
                 .forEach(System.out::println);
 
+        System.out.println();
+        //  возьмем метод класса Stream — filter, который в качестве аргумента принимает Predicate
+        //  и возвращает Stream только с теми элементами, которые удовлетворяют условию Predicate.
+        List<Integer> numbers = Stream.of(11, 13, 14, 15, 16, 22, 23, 25)
+                .filter(b -> b % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println(numbers);
     }
 
     public static <T> void findMinMax(
